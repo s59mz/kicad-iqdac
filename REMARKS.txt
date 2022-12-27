@@ -1,0 +1,4 @@
+# Reconnect PLL filter to pin U1-3 instead of 1V8 pwr.
+# Replace TR1 with ADT2-1t (2:1 impedance ratio)
+# Remove the ground connection from the middle point of the TR1
+

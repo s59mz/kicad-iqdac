@@ -1,0 +1,136 @@
+
+(rules PCB iqdac
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 2673)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.1)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.9)
+    )
+  )
+  (rule
+    (width 250.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-out_pair" "Via[0-1]_800:400_um" "out_pair"
+  )
+  (via 
+    "Via[0-1]_800:400_um-output" "Via[0-1]_800:400_um" output
+  )
+  (via 
+    "Via[0-1]_800:400_um-power" "Via[0-1]_800:400_um" power
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (via_rule
+    "out_pair" "Via[0-1]_800:400_um-out_pair"
+  )
+  (via_rule
+    output "Via[0-1]_800:400_um-output"
+  )
+  (via_rule
+    power "Via[0-1]_800:400_um-power"
+  )
+  (class default
+    +3.3V GND "Net-(C5-Pad1)" "Net-(C5-Pad2)" "Net-(C6-Pad2)" "/avdd_3.3" "Net-(C12-Pad1)" "unconnected-(U1-Pad1)"
+    "/avdd_1.8" +1V8 "Net-(C15-Pad1)" "Net-(D1-Pad2)" "Net-(D2-Pad2)" "unconnected-(U1-Pad7)" "unconnected-(U1-Pad8)" "unconnected-(U1-Pad9)"
+    "unconnected-(U1-Pad10)" "Net-(D3-Pad2)" "/ref_clk" "/refclk_out" "/io_reset" /osk "/io_update" "/syn_clk"
+    /profile0 /profile1 /profile2 /pdclk /txenablefs "/iq_data0" "/iq_data1" "/iq_data2"
+    "/iq_data3" "/iq_data4" "/iq_data5" "/iq_data6" "/iq_data7" "/iq_data8" "/iq_data9" "/iq_data10"
+    "/iq_data11" "/iq_data12" "/iq_data13" "/iq_data14" "/iq_data15" "/iq_data16" "/iq_data17" /cs*
+    /sclk /sdo /sdio /rt "/ext_pwr_dwn" "/master_reset" "unconnected-(U1-Pad24)" "Net-(R1-Pad1)"
+    "/avdd_1.8_pll" "Net-(R7-Pad1)" "Net-(R8-Pad1)" "Net-(R10-Pad1)" "Net-(R11-Pad1)" "unconnected-(TR1-Pad5)" "unconnected-(U1-Pad61)" "unconnected-(U1-Pad72)"
+    "unconnected-(U1-Pad86)" "unconnected-(U1-Pad87)" "unconnected-(U1-Pad93)" "unconnected-(U1-Pad97)" "unconnected-(U1-Pad98)" "unconnected-(U1-Pad99)" "unconnected-(U1-Pad100)" "/avdd_1.8_i"
+    "Net-(D4-Pad2)"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "out_pair"
+    /out+ "/out-"
+    (clearance_class "out_pair")
+    (via_rule out_pair)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class output
+    /o1 /o2 /o3 /o4
+    (clearance_class output)
+    (via_rule output)
+    (rule
+      (width 920.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class power
+    +5V
+    (clearance_class power)
+    (via_rule power)
+    (rule
+      (width 750.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

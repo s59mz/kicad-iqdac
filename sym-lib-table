@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name "PCM1808PW")(type "KiCad")(uri "${KIPRJMOD}/symbols/PCM1808PW.kicad_sym")(options "")(descr ""))
+  (lib (name "adc")(type "KiCad")(uri "${KIPRJMOD}/symbols/adc/adc.kicad_sym")(options "")(descr ""))
+)
